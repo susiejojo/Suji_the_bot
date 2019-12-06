@@ -6,12 +6,14 @@ A chatbot to automate certain functions and provide information.
 </li>
 <li>Python packages:<ul>
 <li> datetime</li>
+<li> google </li>
 <li> notify2 </li>
 <li> praw </li>
 <li> sklearn </li>
 <li> nltk </li>
 <li> webbrowser </li>
 <li> playsound </li>
+ <li> requests </li>
 
 </ul></li>
 
