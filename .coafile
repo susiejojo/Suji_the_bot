@@ -1,0 +1,5 @@
+[cli]
+bears = SpaceConsistencyBear
+default_actions = *: ApplyPatchAction
+files = *.py
+use_spaces = True
