@@ -19,6 +19,7 @@ import requests
 import datetime
 import os
 import pandas as pd
+import notify2
 
 
 def warn(*args, **kwargs):
@@ -101,7 +102,7 @@ def gsearch(text):
 GREETING_INPUTS = ("hello", "hi", "greetings", "sup", "what's up", "hey")
 GREETING_RESPONSES = ["hi", "hey", "how're you",
                       "hi there", "hello", "I am glad you are talking to me!"]
-COMMAND_INPUTS = ("jokes", "youtube", "meme")
+COMMAND_INPUTS = ("jokes", "youtube", "meme","reminder")
 COMMAND_OUTPUTS = ["on it!...", "hang on a minute..."]
 
 
@@ -118,6 +119,20 @@ def checker(sentence):
         else:
             return False
 
+def notifier():
+	print ("SUJI: When? In HH:MM format")
+	print(username, ": ", end="")
+	time_n = input()
+	hour_n = time_n.split(":")[0]
+	min_n = time_n.split(":")[1]
+	print ("SUJI: What to remind?")
+	print(username, ": ", end="")
+	message_n = input()
+	import os
+	print ("SUJI: Setting reminder for ",time_n,": ",message_n)
+	#print ("python3 notifier_mes.py "+hour_n+" "+min_n+" "+message_n+" &")
+	os.system("python3 notifier_mes.py "+hour_n+" "+min_n+" "+message_n+" &")
+	return
 
 def command(sentence, flag1):
     for word in sentence.split():
@@ -139,6 +154,12 @@ def command(sentence, flag1):
                 if (flag1 == False):
                     print("SUJI: ", COMMAND_OUTPUTS[random.randint(0, 1)])
                     meme()
+                    #flag1 = True
+                    time.sleep(5)
+            if (word in COMMAND_INPUTS[3]):
+                if (flag1 == False):
+                    print("SUJI: ", COMMAND_OUTPUTS[random.randint(0, 1)])
+                    notifier()
                     #flag1 = True
                     time.sleep(5)
             return COMMAND_OUTPUTS[random.randint(0, 1)]
