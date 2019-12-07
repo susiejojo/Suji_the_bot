@@ -1,6 +1,6 @@
 autopep8==1.4.4
 google==2.0.2
-nltk==3.4.1
+nltk==3.4.5
 numpy==1.16.4
 pandas==0.24.2
 playsound==1.2.2
