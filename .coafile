@@ -1,5 +1,5 @@
 [cli]
-bears = SpaceConsistencyBear
+bears = PEP8Bear
 default_actions = *: ApplyPatchAction
 files = *.py
 use_spaces = True
